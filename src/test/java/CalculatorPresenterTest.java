@@ -24,6 +24,13 @@ public class CalculatorPresenterTest {
             Thread.sleep(1500);
             view.getButton().doClick(500);
             Thread.sleep(1500);
+            view.getLabel().setText("");
+            Thread.sleep(1500);
+            view.getTextField().setText("20+20");
+            Thread.sleep(1500);
+            view.getButton().doClick(500);
+            Thread.sleep(1500);
+
 
             assertThat(view.getLabel().getText()).isEqualTo("0.0");
         }catch (InterruptedException e){

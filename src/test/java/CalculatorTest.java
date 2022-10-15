@@ -1,7 +1,6 @@
 import org.junit.Test;
 import org.test.Calculator;
 import org.test.CalculatorExpression;
-import org.assertj.core.data.Offset;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.offset;
