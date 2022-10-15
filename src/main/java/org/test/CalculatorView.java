@@ -5,7 +5,7 @@ import java.awt.*;
 
 public class CalculatorView {
 
-    private static final int WINDOW_WIDTH = 500;
+    private static final int WINDOW_WIDTH = 800;
 
     private static final int WINDOW_HEIGHT = 500;
 
@@ -19,11 +19,14 @@ public class CalculatorView {
 
     private final JLabel label;
 
+    private final JPanel panel;
+
     public CalculatorView() {
+        this.panel = new JPanel();
         this.frame = new JFrame("Calculator");
         this.textField = new JTextField("");
         this.button = new JButton("Calculate");
-        this.label = new JLabel("");
+        this.label = new JLabel("Input expression with 2 values and 1 operation", SwingConstants.CENTER);
     }
 
     public JTextField getTextField() {
@@ -46,6 +49,7 @@ public class CalculatorView {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
         frame.setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.Y_AXIS));
+        frame.setResizable(false);
 
         // TextField setup
         textField.setColumns(20);
@@ -59,10 +63,13 @@ public class CalculatorView {
         // Label setup
         label.setFont(FONT);
         label.setPreferredSize(new Dimension(WINDOW_WIDTH, WINDOW_HEIGHT / 3));
-
-        frame.add(textField);
-        frame.add(button);
-        frame.add(label);
-
+        panel.add(textField);
+        panel.add(button);
+        panel.add(label);
+        panel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        panel.setPreferredSize(new Dimension(WINDOW_WIDTH, WINDOW_HEIGHT));
+        panel.setMaximumSize(new Dimension(WINDOW_WIDTH, WINDOW_HEIGHT));
+        frame.getContentPane().add(panel);
+        frame.setLocationRelativeTo(null);
     }
 }
