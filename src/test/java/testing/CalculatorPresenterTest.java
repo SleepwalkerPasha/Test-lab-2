@@ -1,3 +1,5 @@
+package testing;
+
 import org.junit.Test;
 import org.mockito.Mockito;
 import org.test.*;
